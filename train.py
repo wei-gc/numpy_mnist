@@ -55,7 +55,7 @@ if __name__ == '__main__':
     test_loader = DataLoader(X_test, Y_test, batch_size=10000, shuffle=False)
 
     network = MLP_2layer(784, 256, 10)
-    optimizer = SGD(network, lr=0.03, reg=0.01, lr_lambda=lambda epoch: 0.98**epoch)
+    optimizer = SGD(network, lr=0.7, reg=0.01, lr_lambda=lambda epoch: 0.98**epoch)
     acc_test_avg, train_history = train(network, optimizer, train_loader, test_loader, max_epoch=150, log_steps=1)
     # save results
     if not os.path.exists('results'):
